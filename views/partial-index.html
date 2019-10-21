@@ -1,0 +1,8 @@
+<p>How well am I doing?</p>
+<br />
+
+<ul>
+    ${data.map(rank => `
+        <li>${rank.topic_name}: <input type="radio">boop</input></li>
+    <br />`).join('')}
+</ul>
