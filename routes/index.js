@@ -4,7 +4,7 @@ const express = require('express'),
 
 router.get('/', async function(req, res, next) {
     const rankData = await RankModel.getAll();
-    // console.log('rank data', rankData);
+    console.log('rank data', rankData);
 
     res.render('template', {
         locals: {
@@ -17,5 +17,15 @@ router.get('/', async function(req, res, next) {
     });
 });
 
+// router.post('/add', async (req, res) => {
+//     const {ranking} = req.body;
+//     const ranks = await RankModel.getRank(ranking);
+//     console.log('ranks', ranks);
+//     if (ranks.rowCount != 1) {
+//         res.sendStatus(500);
+//     } else {
+//     res.redirect('/');
+//     }
+// });
 
 module.exports = router;

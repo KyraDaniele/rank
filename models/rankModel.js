@@ -1,4 +1,5 @@
-const db = require('./conn');
+const db1 = require('./conn');
+const db2 = require('./conn');
 
 class Rankings {
     constructor(topic_name) {
@@ -6,7 +7,7 @@ class Rankings {
     }
     static async getAll() {
         try {
-            const response = await db.any(`SELECT * FROM rank;`);
+            const response = await db1.any(`SELECT * FROM rank;`);
             return response;
         } catch(error) {
             return error.message;
@@ -14,4 +15,19 @@ class Rankings {
     }
 }
 
-module.exports = Rankings;
+// class Score {
+//     constructor(ranking) {
+//         this.ranking = ranking;
+//     }
+//     static async getRank() {
+//         try {
+//             const scoring = await db2.any(`SELECT * FROM ranking_system;`);
+//             return scoring;
+//         } catch(error) {
+//             return error.message;
+//         }
+//     }
+// }
+
+
+module.exports = Rankings, Score;

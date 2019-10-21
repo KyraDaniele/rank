@@ -1,6 +1,6 @@
 const pgp = require('pg-promise') ({
     query: function(e) {
-        // console.log('QUERY:', e.query)
+        console.log('QUERY:', e.query)
     }
 });
 
@@ -9,6 +9,12 @@ const options = {
     database: 'rank'
 };
 
-const db = pgp(options);
+// const whatever = {
+//     host: 'localhost',
+//     database: 'ranking_system'
+// };
 
-module.exports = db;
+const db1 = pgp(options);
+// const db2 = pgp(whatever);   ,db2
+
+module.exports = db1;
